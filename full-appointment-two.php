@@ -6,14 +6,9 @@
     if (isset($_REQUEST['tipo'])){
         $tipo = $_REQUEST['tipo'];
         if ($tipo != '') {
-            if ($where == "") {
-                $where = " WHERE p.tipo = '$tipo'";
-            }else {
-                $where = "$where OR p.tipo = '$tipo'";
-            }
+         $where = "WHERE p.tipo = '$tipo'";
         }
     }
-
     if (isset($_REQUEST['gender'])){
         $gender = $_REQUEST['gender'];
         if ($gender != ""){
@@ -24,19 +19,6 @@
             }
         }
     }
-    if (isset($_REQUEST['consulting_room'])){
-        $consulting_room = $_REQUEST['consulting_room'];
-        if ($consulting_room != ""){
-            if ($where == ""){
-                $where = " WHERE d.Consulting_room = '$consulting_room'";
-            }else{
-                $where = "$where OR d.Consulting_room = '$consulting_room'";
-            }
-        }
-    }
-
-
-
 
 
     //Conexión a la base de datos
@@ -65,7 +47,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/css/">
-    <title>Reports page 1</title>
+    <title>Reports page 2</title>
 </head>
 <body>
     <form action="full-appointment.php">
@@ -82,20 +64,9 @@
             <option value="Gato">Gato</option>
             <option value="Perro">Perro</option>
         </select>
-        <br><br>
-        Consulting room
-        <select name="consulting_room">
-            <option value="">Select</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
        
         <br/><br/>
-        <input type="submit" value="Search 1"/>
-        <br/><br/>
-        <input type="submit" value="Search 2"/>
+        <input type="submit" value="Search"/>
         <hr/>
     
     </form>
